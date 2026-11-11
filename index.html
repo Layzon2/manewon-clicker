@@ -138,6 +138,60 @@
   <!-- Тост-уведомления контейнер -->
   <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
+  <!-- Скрытая кнопка админ-панели -->
+  <button class="admin-hidden-btn" id="adminHiddenBtn" type="button" aria-label="Админ панель">🔧</button>
+
+  <!-- Модальное окно админ-панели -->
+  <div class="modal-overlay" id="adminOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal admin-modal">
+      <button class="modal-close" id="adminClose" type="button" aria-label="Закрыть админ панель">×</button>
+      <div class="admin-header">
+        <div class="admin-title">⚙️ Админ панель</div>
+        <div class="admin-subtitle">Только для разработчика</div>
+      </div>
+      <div class="admin-section">
+        <div class="admin-section-title">Валюта</div>
+        <div class="admin-row">
+          <label>Note Coins</label>
+          <input type="number" id="adminCoins" placeholder="0">
+        </div>
+        <div class="admin-row">
+          <label>Всего нажатий</label>
+          <input type="number" id="adminClicks" placeholder="0">
+        </div>
+        <div class="admin-row">
+          <label>Заработано монет</label>
+          <input type="number" id="adminEarned" placeholder="0">
+        </div>
+        <button class="admin-btn admin-set" id="adminSetBtn" type="button">Применить значения</button>
+      </div>
+      <div class="admin-section">
+        <div class="admin-section-title">Темы</div>
+        <button class="admin-btn admin-unlock" id="adminUnlockAllBtn" type="button">Разблокировать все темы</button>
+        <div class="admin-row">
+          <label>Активная тема</label>
+          <select id="adminThemeSelect"></select>
+        </div>
+        <button class="admin-btn admin-set" id="adminSetThemeBtn" type="button">Применить тему</button>
+      </div>
+      <div class="admin-section">
+        <div class="admin-section-title">Прогресс</div>
+        <button class="admin-btn admin-reset" id="adminWipeBtn" type="button">Полный сброс LocalStorage</button>
+        <button class="admin-btn admin-export" id="adminExportBtn" type="button">Экспорт сохранения</button>
+        <div class="admin-row" style="margin-top:8px;">
+          <label>Импорт JSON</label>
+          <input type="text" id="adminImportJson" placeholder="Вставьте JSON...">
+        </div>
+        <button class="admin-btn admin-set" id="adminImportBtn" type="button">Импортировать</button>
+      </div>
+      <div class="admin-raw" id="adminRaw" style="display:none;">
+        <div class="admin-section-title">Сырые данные</div>
+        <pre id="adminRawText"></pre>
+        <button class="admin-btn admin-set" id="adminRefreshRawBtn" type="button">Обновить вывод</button>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

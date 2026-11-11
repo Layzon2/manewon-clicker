@@ -1,0 +1,8 @@
+# Исключаем вложенные проекты и системные файлы
+ZubilaStyle/
+SimpleEssentials/
+.git/
+*.lock
+node_modules/
+.DS_Store
+Thumbs.db
